@@ -1,0 +1,32 @@
+{
+    "manifest_version": 3,
+    "name": "Text Quick Menu",
+    "version": "1.0.0",
+    "description": "Shows a quick action menu when text is selected.",
+    "icons": {
+        "16": "icon.png",
+        "32": "icon.png",
+        "48": "icon.png",
+        "128": "icon.png"
+    },
+    "background": {
+        "service_worker": "service_worker.js"
+    },
+    "action": {
+        "default_title": "Text Quick Menu"
+    },
+    "permissions": [
+        "storage"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_idle"
+        }
+    ]
+}
